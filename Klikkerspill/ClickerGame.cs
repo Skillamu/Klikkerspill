@@ -8,9 +8,9 @@ namespace Klikkerspill
 {
     internal class ClickerGame
     {
-        public int _points = 0;
-        public int _pointsPerClick = 1;
-        public int _pointsPerClickIncrease = 1;
+        private int _points = 0;
+        private int _pointsPerClick = 1;
+        private int _pointsPerClickIncrease = 1;
 
         public void Click()
             => Console.WriteLine("Click was invoked"); //_points += _pointsPerClick;
