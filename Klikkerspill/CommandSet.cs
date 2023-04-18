@@ -23,14 +23,8 @@ namespace Klikkerspill
 
         public void RunCommand(char cmdFromUser)
         {
-            foreach (var command in _commands)
-            {
-                if (command.Character == cmdFromUser)
-                {
-                    command.Run();
-                    break;
-                }
-            }
+            var command = _commands.FirstOrDefault(cmd => cmd.Character == cmdFromUser);
+            command?.Run();
         }
     }
 }
