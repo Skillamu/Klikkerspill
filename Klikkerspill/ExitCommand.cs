@@ -8,18 +8,16 @@ namespace Klikkerspill
 {
     internal class ExitCommand : ICommand
     {
-        private ClickerGame _clickerGame;
         public char Character { get; }
 
-        public ExitCommand(ClickerGame clickerGame)
+        public ExitCommand()
         {
-            _clickerGame = clickerGame;
             Character = 'X';
         }
 
         public void Run()
         {
-            _clickerGame.Exit();
+            Environment.Exit(0);
         }
     }
 }

@@ -9,7 +9,7 @@
 
             while (true)
             {
-                //clickerGame.Show();
+                clickerGame.Show();
                 var cmdFromUser = Console.ReadKey(true).KeyChar;
                 commandSet.RunCommand(cmdFromUser);
             }

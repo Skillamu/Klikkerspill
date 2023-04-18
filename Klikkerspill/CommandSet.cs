@@ -8,14 +8,14 @@ namespace Klikkerspill
 {
     internal class CommandSet
     {
-        public ICommand[] _commands;
+        private ICommand[] _commands;
 
         public CommandSet(ClickerGame clickerGame)
         {
             _commands = new ICommand[]
             {
+                new ExitCommand(),
                 new ClickCommand(clickerGame),
-                new ExitCommand(clickerGame),
                 new NormalUpgradeCommand(clickerGame),
                 new SuperUpgradeCommand(clickerGame),
             };

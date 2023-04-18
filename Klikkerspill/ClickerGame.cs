@@ -8,28 +8,35 @@ namespace Klikkerspill
 {
     internal class ClickerGame
     {
-        private int _points = 0;
-        private int _pointsPerClick = 1;
-        private int _pointsPerClickIncrease = 1;
+        private int _points;
+        private int _pointsPerClick;
+        private int _pointsPerClickIncrease;
+
+        public ClickerGame()
+        {
+            _pointsPerClick = 1;
+            _pointsPerClickIncrease = 1;
+        }
 
         public void Click()
-            => Console.WriteLine("Click was invoked"); //_points += _pointsPerClick;
-
-        public void Exit()
-            => Console.WriteLine("Exit was invoked"); //Environment.Exit(0);
+            => _points += _pointsPerClick;
 
         public void NormalUpgrade()
         {
-            Console.WriteLine("Normal Upgrade was invoked");
-            /*_points -= 10;
-            _pointsPerClick += _pointsPerClickIncrease;*/
+            if (_points >= 10)
+            {
+                _points -= 10;
+                _pointsPerClick += _pointsPerClickIncrease;
+            }
         }
 
         public void SuperUpgrade()
         {
-            Console.WriteLine("Super Upgrade was invoked");
-            /*_points -= 100;
-            _pointsPerClickIncrease++;*/
+            if (_points >= 100)
+            {
+                _points -= 100;
+                _pointsPerClickIncrease++;
+            }
         }
 
         public void Show()
